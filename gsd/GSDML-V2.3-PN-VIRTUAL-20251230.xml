@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.3.xsd">
+-->
+<ISO15745Profile xmlns:base="http://www.profibus.com/GSDML/2003/11/Primitives" xmlns:ds="http://www.w3.org/2000/09/xmldsig" xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.3.xsd">
+ <ProfileHeader>
+  <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+  <ProfileRevision>1.00</ProfileRevision>
+  <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+  <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+  <ProfileClassID>Device</ProfileClassID>
+  <ISO15745Reference>
+   <ISO15745Part>4</ISO15745Part>
+   <ISO15745Edition>1</ISO15745Edition>
+   <ProfileTechnology>GSDML</ProfileTechnology>
+  </ISO15745Reference>
+ </ProfileHeader>
+ <ProfileBody>
+  <DeviceIdentity VendorID="0x1d6b" DeviceID="0x0001">
+   <InfoText TextId="TID_Infotext_Dev_1"/>
+   <VendorName Value="Virtual"/>
+  </DeviceIdentity>
+  <DeviceFunction>
+   <Family MainFamily="I/O" ProductFamily="Virtual PN System"/>
+  </DeviceFunction>
+  <ApplicationProcess>
+   <DeviceAccessPointList>
+    <DeviceAccessPointItem ID="DAP 1" PhysicalSlots="0..2" ModuleIdentNumber="0x10000000" PNIO_Version="V2.2" MinDeviceInterval="32" ImplementationType="ERTEC200" DNS_CompatibleName="MX-PN" ExtendedAddressAssignmentSupported="false" AddressAssignment="DCP;IP" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" MaxSupportedRecordSize="4068" ParameterizationSpeedupSupported="false" NameOfStationNotTransferable="true" DeviceAccessSupported="true" PowerOnToCommReady="500" RequiredSchemaVersion="V2.2">
+     <ModuleInfo>
+      <Name TextId="TID_Name_DAP_1"/>
+      <InfoText TextId="TID_Infotext_DAP_1"/>
+      <VendorName Value="Virtual-device"/>
+      <OrderNumber Value="MX-IM-001"/>
+      <HardwareRelease Value="1"/>
+      <SoftwareRelease Value="V0.00.00"/>
+     </ModuleInfo>
+     <SubslotList>
+      <!-- Index 0x8000 Interface, 0x8001=Port1 0x8002=Port2 -->
+      <SubslotItem SubslotNumber="32768" TextId="TID_PN"/>
+      <SubslotItem SubslotNumber="32769" TextId="TID_Port1"/>
+     </SubslotList>
+     <IOConfigData MaxInputLength="400" MaxOutputLength="400"/>
+     <UseableModules>
+      <ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..2"/>
+      <ModuleItemRef ModuleItemTarget="16" AllowedInSlots="1..2"/>
+     </UseableModules>
+     <VirtualSubmoduleList>
+      <VirtualSubmoduleItem ID="DAP 1" SubmoduleIdentNumber="0x00001000" Writeable_IM_Records="1 2 3 4">
+       <IOData IOPS_Length="1" IOCS_Length="1"/>
+       <RecordDataList>
+       </RecordDataList>
+       <ModuleInfo>
+        <Name TextId="TID_Name_DAP_1"/>
+        <InfoText TextId="TID_Infotext_DAP_1"/>
+       </ModuleInfo>
+      </VirtualSubmoduleItem>
+     </VirtualSubmoduleList>
+     <SystemDefinedSubmoduleList>
+      <InterfaceSubmoduleItem ID="I1" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="false" DCP_HelloSupported="true" SubslotNumber="32768" TextId="TID_PN" SubmoduleIdentNumber="0x00001001">
+       <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="128"/>
+       <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>
+       <ApplicationRelations NumberOfAR="1" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+        <TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+        <RT_Class3TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128"/>
+       </ApplicationRelations>
+       <MediaRedundancy SupportedRole="Client"/>
+      </InterfaceSubmoduleItem>
+      <PortSubmoduleItem ID="I1_P1" SubslotNumber="32769" MaxPortRxDelay="302" MaxPortTxDelay="108" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" TextId="TID_Port1" SubmoduleIdentNumber="0x00001002" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+     </SystemDefinedSubmoduleList>
+    </DeviceAccessPointItem>
+   </DeviceAccessPointList>
+   <ModuleList>
+    <ModuleItem ID="1" ModuleIdentNumber="0x00000001">
+     <ModuleInfo CategoryRef="DI_Module">
+      <Name TextId="TID_Name_Mod_1"/>
+      <InfoText TextId="TID_Infotext_Mod_1"/>
+      <OrderNumber Value="MX-8DI-001"/>
+     </ModuleInfo>
+     <VirtualSubmoduleList>
+      <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000001">
+       <IOData IOPS_Length="1" IOCS_Length="1">
+        <Input>
+         <DataItem DataType="Unsigned8" UseAsBits="false" TextId="TID_Inputs" />
+        </Input>
+       </IOData>
+       <RecordDataList>
+        <ParameterRecordDataItem Index="125" Length="1" TransferSequence="0">
+         <Name TextId="TID_GenParameters"/>
+         <Const Data="0x00" ByteOffset="0"/>
+         <Ref DataType="Unsigned8" ByteOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="TID_Byte_Offset"/>
+        </ParameterRecordDataItem>
+       </RecordDataList>
+       <ModuleInfo>
+        <Name TextId="TID_Name_Mod_1"/>
+        <InfoText TextId="TID_Infotext_Mod_1"/>
+       </ModuleInfo>
+      </VirtualSubmoduleItem>
+     </VirtualSubmoduleList>
+    </ModuleItem>
+    <ModuleItem ID="16" ModuleIdentNumber="0x00000101">
+     <ModuleInfo CategoryRef="DO_Module">
+      <Name TextId="TID_Name_Mod_16"/>
+      <InfoText TextId="TID_Infotext_Mod_16"/>
+      <OrderNumber Value="MX-8DQ-001"/>
+     </ModuleInfo>
+     <VirtualSubmoduleList>
+      <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000101">
+       <IOData IOPS_Length="1" IOCS_Length="1">
+        <Output>
+         <DataItem DataType="Unsigned8" UseAsBits="false" TextId="TID_Outputs" />
+        </Output>
+       </IOData>
+       <RecordDataList>
+        <ParameterRecordDataItem Index="125" Length="1" TransferSequence="0">
+         <Name TextId="TID_GenParameters"/>
+         <Const Data="0x00" ByteOffset="0"/>
+         <Ref DataType="Unsigned8" ByteOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="TID_Byte_Offset"/>
+        </ParameterRecordDataItem>
+       </RecordDataList>
+       <ModuleInfo>
+        <Name TextId="TID_Name_Mod_16"/>
+        <InfoText TextId="TID_Infotext_Mod_16"/>
+       </ModuleInfo>
+      </VirtualSubmoduleItem>
+     </VirtualSubmoduleList>
+    </ModuleItem>
+   </ModuleList>
+   <ValueList>
+    <ValueItem ID="Val_EnAlarms">
+     <Assignments>
+      <Assign Content="0" TextId="TID_disabled"/>
+      <Assign Content="1" TextId="TID_enabled"/>
+     </Assignments>
+    </ValueItem>
+    <ValueItem ID="Val_Par_DevEnProcessAlarms">
+     <Assignments>
+      <Assign Content="0" TextId="TID_disabled"/>
+      <Assign Content="1" TextId="TID_enabled"/>
+     </Assignments>
+    </ValueItem>
+    <ValueItem ID="Val_Par_DevEnDiagAlarms">
+     <Assignments>
+      <Assign Content="0" TextId="TID_disabled"/>
+      <Assign Content="1" TextId="TID_enabled"/>
+     </Assignments>
+    </ValueItem>
+   </ValueList>
+   <!-- Module Categories (as displayed in engineering tool) -->
+   <CategoryList>
+    <CategoryItem ID="DI_Module" TextId="TID_CatItem_DI_Module">
+     <InfoText TextId="TID_Infotext_DI_Module"/>
+    </CategoryItem>
+    <CategoryItem ID="DO_Module" TextId="TID_CatItem_DO_Module">
+     <InfoText TextId="TID_Infotext_DO_Module"/>
+    </CategoryItem>
+   </CategoryList>
+   <!-- Language dependant Text Discriptions -->
+   <ExternalTextList>
+    <PrimaryLanguage>
+     <Text TextId="TID_Empty" Value="  "/>
+     <!-- General Descriptions -->
+     <Text TextId="TID_GenParameters" Value="General Parameters"/>
+     <Text TextId="TID_Interface" Value="IF"/>
+     <Text TextId="TID_PN" Value="PN-IO"/>
+     <Text TextId="TID_Port1" Value="Port 1"/>
+     <Text TextId="TID_Port2" Value="Port 2"/>
+     <Text TextId="TID_Inputs" Value="Inputs"/>
+     <Text TextId="TID_Outputs" Value="Outputs"/>
+
+     <Text TextId="TID_Byte_Offset" Value="byte offset"/>
+
+     <!-- Device Descriptions -->
+     <Text TextId="TID_enabled"  Value="enable"/>
+     <Text TextId="TID_disabled"  Value="disable"/>
+     <Text TextId="TID_Par_DevEnProcessAlarms"  Value="Process alarms"/>
+     <Text TextId="TID_Par_DevEnDiagAlarms"  Value="Diagnostic alarms"/>
+     <Text TextId="TID_Infotext_Dev_1" Value="Profinet Device for I/O System"/>
+     <Text TextId="TID_Name_DAP_1" Value="Virtual Profinet Device"/>
+     <Text TextId="TID_Infotext_DAP_1" Value="Virtual Profinet Device"/>
+     <!-- DI Module Descriptions -->
+     <Text TextId="TID_Name_Mod_1" Value="MX-8DI"/>
+     <Text TextId="TID_Infotext_Mod_1" Value="IO-MODUL 8 DIGITAL IN"/>
+     <!-- DO Module Descriptions -->
+     <Text TextId="TID_Name_Mod_16" Value="MX-8DO"/>
+     <Text TextId="TID_Infotext_Mod_16" Value="IO-MODUL 8 DIGITAL OUT"/>
+     <!-- Categorie Text and InfoText -->
+     <Text TextId="TID_CatItem_DI_Module" Value="DI"/>
+     <Text TextId="TID_Infotext_DI_Module" Value="Digital Input Modules"/>
+     <Text TextId="TID_CatItem_DO_Module" Value="DO"/>
+     <Text TextId="TID_Infotext_DO_Module" Value="Digital Output Modules"/>
+    </PrimaryLanguage>
+   </ExternalTextList>
+  </ApplicationProcess>
+ </ProfileBody>
+</ISO15745Profile>

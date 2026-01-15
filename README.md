@@ -1,6 +1,6 @@
 Демо-проект реализации profinet-device на языке программирования С в среде Eclipse под Ubuntu 22.04
 
-<img width="456" height="469" alt="image" src="https://github.com/user-attachments/assets/bcc5ceaa-2099-404f-9048-84ced8e6d14a" />
+<img width="456/2" height="469/2" alt="image" src="https://github.com/user-attachments/assets/bcc5ceaa-2099-404f-9048-84ced8e6d14a" />
 
 <img width="275" height="240" alt="image" src="https://github.com/user-attachments/assets/0c8144d6-c017-4914-a40e-2009c18aaf30" />
 

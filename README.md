@@ -20,3 +20,5 @@
 <img width="350" height="90" alt="image" src="https://github.com/user-attachments/assets/c07ebc7d-a421-4962-a5ad-0e50f7e42481" />
 <br>
 Программа использует стандартный udp-порт siemens 34964 и исходящий порт 50000. Необходимо разрешить их в настройках фаервола или вообще отключить его.
+<br><br>
+<a href='https://yoomoney.ru/to/4100119354498534'>благодарность</a>

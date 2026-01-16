@@ -1,6 +1,6 @@
 <h1>Демо-проект реализации profinet-device на языке программирования С в среде Eclipse под Ubuntu 22.04</h1>
 Разработано и проверено на виртуальной машине под Oracle VirtualBox.<br>
-Порядок установки VirtualBox, Ubuntu 22.04 и Eclipse IDE for c/c++ developers опускаем..<br>
+Порядок установки VirtualBox, Ubuntu 22.04 и Eclipse IDE for c/c++ developers опускаем..<br><br>
 Далее:
 <li>Клонировать проект с github</li>
 <li>Запустить Eclipse с правами супер-пользователя</li>
